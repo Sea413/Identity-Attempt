@@ -19,10 +19,10 @@ namespace StackOverflow.Controllers
 
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signIngManager, ApplicationDbContext db)
+        public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext db)
         {
             _userManager = userManager;
-            _signInManager = signIngManager;
+            _signInManager = signInManager;
             _db = db;
         }
 

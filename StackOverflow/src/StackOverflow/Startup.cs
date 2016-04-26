@@ -25,7 +25,7 @@ namespace StackOverflow
                 .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+                services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
         }
@@ -49,3 +49,15 @@ namespace StackOverflow
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }
+
+//public void ConfigureServices(IServiceCollection services)
+//{
+//    services.AddMvc();
+//    services.AddEntityFramework()
+//        .AddSqlServer()
+//        .AddDbContext<ApplicationDbContext>(options =>
+//        options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+//    services.AddIdentity<ApplicationUser, ApplicationRole>()
+//        .AddEntityFrameworkStores<ApplicationDbContext, long>()
+//        .AddDefaultTokenProviders();
+//}

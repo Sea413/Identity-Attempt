@@ -50,7 +50,7 @@ namespace StackOverflow.Controllers
 
         public IActionResult Details(int id)
         {
-            var questionDetail = _db.Questions.Include(x => x.Answers).ToList()
+            var questionDetail = _db.Questions.Include(x => x.Answers).Include(x => x.User).ToList()
                 .FirstOrDefault(x => x.QuestionId == id);
                 
             return View(questionDetail); 
